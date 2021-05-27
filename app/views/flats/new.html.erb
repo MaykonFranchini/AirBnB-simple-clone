@@ -1,0 +1,9 @@
+<%= simple_form_for(@flat) do |f| %>
+<%= f.input :name %>
+<%= f.input :address %>
+<%= f.input :description %>
+<%= f.input :number_of_guests %>
+<%= f.input :price_per_night %>
+<%= f.submit %>
+<%= link_to 'Cancel', new_flat_path %>
+<% end %>
