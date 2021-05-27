@@ -22,6 +22,14 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'autoprefixer-rails'
+# font awesome icons
+gem 'font-awesome-sass', '~> 5.6.1'
+# simple form
+gem 'simple_form'
+# Faker
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -50,10 +58,3 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'autoprefixer-rails'
-# font awesome icons
-gem 'font-awesome-sass', '~> 5.6.1'
-# simple form
-gem 'simple_form'
-# Faker
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
