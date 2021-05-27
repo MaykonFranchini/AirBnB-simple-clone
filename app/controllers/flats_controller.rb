@@ -17,6 +17,12 @@ class FlatsController < ApplicationController
     end
   end
 
+  def destroy
+    @flat.destroy
+
+    redirect_to flats_path
+  end
+
   def show
   end
 
@@ -25,16 +31,10 @@ class FlatsController < ApplicationController
 
   def update
     if @flat.update(flats_params)
-      redirect_to flat_path(@flat), notice: 'Flat was successfully updated.'
+      redirect_to flat_path(@flat)
     else
       render :edit
     end
-  end
-
-  def destroy
-    @flat.destroy
-
-    redirect_to flats_path
   end
 
   private
