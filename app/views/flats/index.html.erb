@@ -3,12 +3,15 @@
 <div>
   <% @flats.each do |flat| %>
   <div>
-    <%= link_to flat_path(flat) do %>
     <h3><%= flat.name %></h3>
     <p><%= flat.address %></p>
     <p>N of guests: <%= flat.number_of_guests%></p>
     <p>£ <%= flat.price_per_night%></p>
+    <%= link_to 'More info', flat_path(flat) %>
+    <%= link_to 'Edit', edit_flat_path(flat), method: :delete %>
+    <%= link_to "Remove", root_path(flat), method: :delete, data: { confirm: "Are you sure it looks tasty?" } %>
+
   </div>
-  <%end %>
-  <% end %>
+  <%end%>
+
 </div>

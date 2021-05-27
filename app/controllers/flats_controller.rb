@@ -1,4 +1,5 @@
 class FlatsController < ApplicationController
+  before_action :set_flat, only: [:show, :edit, :update, :destroy]
   def index
     @flats = Flat.all
   end
@@ -17,10 +18,30 @@ class FlatsController < ApplicationController
   end
 
   def show
-    @flat = Flat.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @flat.update(flats_params)
+      redirect_to flat_path(@flat), notice: 'Flat was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @flat.destroy
+
+    redirect_to flats_path
   end
 
   private
+
+  def set_flat
+    @flat = Flat.find(params[:id])
+  end
 
   def flats_params
     params.require(:flat).permit(:name, :address, :description, :number_of_guests, :price_per_night)
