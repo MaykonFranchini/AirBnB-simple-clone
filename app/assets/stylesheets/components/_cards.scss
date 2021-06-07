@@ -1,0 +1,25 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.card {
+  box-shadow: 2px 2px 4px gray;
+  padding: 10px;
+  border-radius: 20px;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.buttons {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.border-radius {
+  border-radius: 20px;
+  margin: 0 5px;
+}
