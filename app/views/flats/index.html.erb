@@ -13,17 +13,12 @@
 
     <div class="cards">
       <% @flats.each do |flat| %>
-      <div class='card'>
+      <div class='card p-4'>
         <h3><%= flat.name %></h3>
         <p><%= flat.address %></p>
         <p>N of guests: <%= flat.number_of_guests%></p>
         <p>£ <%= flat.price_per_night%></p>
-        <div class="buttons">
-        <%= link_to 'More info', flat_path(flat), class: 'btn btn-primary border-radius' %>
-        <%= link_to 'Edit', edit_flat_path(flat), class: 'btn btn-light border-radius' %>
-        <%= link_to 'Remove', flat_path(flat), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger border-radius' %>
-
-        </div>
+        <%= link_to 'Details', flat_path(flat), class: 'btn btn-light' %>
       </div>
       <% end %>
     </div>

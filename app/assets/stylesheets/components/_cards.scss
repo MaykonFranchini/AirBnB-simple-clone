@@ -2,12 +2,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+  font-family: 'Baloo Tammudu 2', cursive;
 }
 
 .card {
   box-shadow: 2px 2px 4px gray;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   a {
     color: black;
     text-decoration: none;
@@ -22,4 +23,26 @@
 .border-radius {
   border-radius: 20px;
   margin: 0 5px;
+}
+.icon-trash {
+  color: red;
+  font-size: 20px;
+  margin-left: 10px;
+
+  &:hover {
+    color: #f77b7b;
+  }
+}
+
+.icon-edit {
+  font-size: 20px;
+  color: blue;
+  &:hover {
+    color: lightblue;
+  }
+}
+
+.show-card {
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px gray;
 }
