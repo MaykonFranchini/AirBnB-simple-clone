@@ -1,25 +1,28 @@
 <div class="container">
+  <% flat_photo = [1008, 1040, 101, 1043, 1047, 1048, 1067, 1078, 142, 164] %>
 
-    <div class="show-card p-5 mt-5">
-      <div>
-      <h1><%= @flat.name %></h1>
-      <p><%= @flat.address %></p>
-    </div>
+    <div class="show-card p-4 mt-5 row">
+      <div class="buttons">
+        <%= link_to '<i class="fas fa-pen"></i>'.html_safe, edit_flat_path(@flat), class: 'icon-edit' %>
+        <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, flat_path(@flat), method: :delete, data: { confirm: "Are you sure?" }, class: 'icon-trash' %>
+      </div>
 
-    <div>
-      <h3>A bit more about this flat...</h3>
-      <p><%= @flat.description %></p>
-    </div>
+      <div class="flat-photo col-6">
+          <%= image_tag "https://picsum.photos/id/#{flat_photo.sample}/200/300" %>
+      </div>
+      <div class="col-6">
+        <h1><%= @flat.name %></h1>
+        <p><%= @flat.address %></p>
 
-    <div>
-      <h3>Details</h3>
-      <p>Guests: <%= @flat.number_of_guests %></p>
-      <p>£ <%= @flat.price_per_night %></p>
-    </div>
+        <h3>A bit more about this flat...</h3>
+        <p><%= @flat.description %></p>
 
-    <div class="buttons">
-      <%= link_to '<i class="fas fa-pen"></i>'.html_safe, edit_flat_path(@flat), class: 'icon-edit' %>
-      <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, flat_path(@flat), method: :delete, data: { confirm: "Are you sure?" }, class: 'icon-trash' %>
+        <h3>Details</h3>
+        <div class="content-guess-info">
+          <p><i class="fas fa-user-friends"></i> <%= @flat.number_of_guests %></p>
+          <p>£ <%= @flat.price_per_night %></p>
+        </div>
+        <%= link_to 'Book now', flat_path(@flat), class:'mt-5 btn btn-primary w-100' %>
+      </div>
     </div>
-  </div>
 </div>

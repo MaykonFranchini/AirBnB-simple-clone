@@ -5,20 +5,26 @@
   </div>
 </div>
 
-
-
+<% flat_photo = [1008, 1040, 101, 1043, 1047, 1048, 1067, 1078, 142, 164] %>
 <div class="container">
 
   <h1>All our Flats(<%=@flats.count %>)</h1>
 
     <div class="cards">
       <% @flats.each do |flat| %>
-      <div class='card p-4'>
-        <h3><%= flat.name %></h3>
-        <p><%= flat.address %></p>
-        <p>N of guests: <%= flat.number_of_guests%></p>
-        <p>£ <%= flat.price_per_night%></p>
-        <%= link_to 'Details', flat_path(flat), class: 'btn btn-light' %>
+      <div class='card'>
+        <div class="photo-container">
+          <%= image_tag "https://picsum.photos/id/#{flat_photo.sample}/200/300" %>
+        </div>
+        <div class="content-container">
+          <h3><%= flat.name %></h3>
+          <p><%= flat.address %></p>
+          <div class="content-guess-info">
+            <p><i class="fas fa-user-friends"></i> <%= flat.number_of_guests%></p>
+            <p>£ <%= flat.price_per_night%></p>
+          </div>
+          <%= link_to 'Details', flat_path(flat), class: 'btn btn-light w-100' %>
+        </div>
       </div>
       <% end %>
     </div>

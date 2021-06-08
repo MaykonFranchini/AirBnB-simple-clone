@@ -1,0 +1,20 @@
+.form-box {
+  width: 400px;
+  margin: 100px auto;
+  background-image: linear-gradient(to bottom right, #99a7ef, #465696);
+  border-radius: 20px;
+  padding: 15px;
+  color: white;
+
+  a, .btn {
+    color: white;
+  }
+  input {
+    border-radius: 20px;
+    background: transparent;
+    border: solid 2px white;
+  }
+  input:focus {
+    background: transparent;
+  }
+}
