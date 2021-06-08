@@ -21,7 +21,7 @@
           <p><%= flat.address %></p>
           <div class="content-guess-info">
             <p><i class="fas fa-user-friends"></i> <%= flat.number_of_guests%></p>
-            <p>£ <%= flat.price_per_night%></p>
+            <p><i class="fas fa-pound-sign"></i> <%= flat.price_per_night%></p>
           </div>
           <%= link_to 'Details', flat_path(flat), class: 'btn btn-light w-100' %>
         </div>
