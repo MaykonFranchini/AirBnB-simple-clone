@@ -3,12 +3,14 @@
 
     <div class="show-card p-4 mt-5 row">
       <div class="buttons">
+
         <% if policy(@flat).edit? %>
           <%= link_to '<i class="fas fa-pen"></i>'.html_safe, edit_flat_path(@flat), class: 'icon-edit' %>
         <% end %>
         <% if policy(@flat).destroy? %>
           <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, flat_path(@flat), method: :delete, data: { confirm: "Are you sure?" }, class: 'icon-trash' %>
         <% end %>
+
       </div>
 
       <div class="flat-photo col-6">
@@ -27,8 +29,8 @@
           <p><i class="fas fa-pound-sign"></i> <%= @flat.price_per_night %></p>
         </div>
         <%= simple_form_for(@booking) do |f| %>
-          <%= f.input :check_in %>
-          <%= f.input :check_out %>
+          <%= f.input :check_in, as: :string, type: :text %>
+          <%= f.input :check_out, as: :string, type: :text %>
           <%= f.submit class:'btn btn-primary' %>
         <% end %>
       </div>

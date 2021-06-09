@@ -17,8 +17,10 @@
 .buttons {
   position: absolute;
   right: 20px;
+  right: 5px;
   display: inline-block;
   padding: 0 10px;
+  z-index: 20;
 }
 
 .border-radius {

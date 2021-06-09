@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Pundit
 gem 'pundit'
 
+# date piker / calendar
+gem 'flatpickr'
+
 gem 'autoprefixer-rails'
 # font awesome icons
 gem 'font-awesome-sass', '~> 5.6.1'

@@ -35,6 +35,7 @@ class FlatsController < ApplicationController
   end
 
   def edit
+    authorize @flat
   end
 
   def update
