@@ -3,8 +3,12 @@
 
     <div class="show-card p-4 mt-5 row">
       <div class="buttons">
-        <%= link_to '<i class="fas fa-pen"></i>'.html_safe, edit_flat_path(@flat), class: 'icon-edit' %>
-        <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, flat_path(@flat), method: :delete, data: { confirm: "Are you sure?" }, class: 'icon-trash' %>
+        <% if policy(@flat).edit? %>
+          <%= link_to '<i class="fas fa-pen"></i>'.html_safe, edit_flat_path(@flat), class: 'icon-edit' %>
+        <% end %>
+        <% if policy(@flat).destroy? %>
+          <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, flat_path(@flat), method: :delete, data: { confirm: "Are you sure?" }, class: 'icon-trash' %>
+        <% end %>
       </div>
 
       <div class="flat-photo col-6">
