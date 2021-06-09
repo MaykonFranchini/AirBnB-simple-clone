@@ -26,7 +26,11 @@
           <p><i class="fas fa-user-friends"></i> <%= @flat.number_of_guests %></p>
           <p><i class="fas fa-pound-sign"></i> <%= @flat.price_per_night %></p>
         </div>
-        <%= link_to 'Book now', flat_path(@flat), class:'mt-5 btn btn-primary w-100' %>
+        <%= simple_form_for(@booking) do |f| %>
+          <%= f.input :check_in %>
+          <%= f.input :check_out %>
+          <%= f.submit class:'btn btn-primary' %>
+        <% end %>
       </div>
     </div>
 </div>
